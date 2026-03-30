@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framatch | O Jogo da Matemática</title>
+    <link rel="stylesheet" href="stylo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        .hero { text-align: center; padding: 80px 20px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; color: var(--text-light); }
+        .hero span { color: var(--danger-red); }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; color: #cbd5e1; }
+        
+        /* Estilos do Slider */
+        .swiper { width: 100%; padding: 50px 0; }
+        .swiper-slide {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-top: 5px solid var(--primary-blue);
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+        .swiper-slide h3 { color: var(--accent-yellow); font-size: 1.5rem; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"> Framatch</div>
+        <nav>
+            <a href="home.html" class="active">Home</a>
+            <a href="objetivo.html">Objetivo</a>
+            <a href="equipe.html">Equipe</a>
+            <a href="login.html" class="btn-login">Entrar</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Suba de Nível na <span>Matemática</span></h1>
+            <p>Esqueça as lousas entediantes. No Framatch, cada equação é uma batalha, cada acerto é XP, e você é o herói dessa jornada épica rumo ao conhecimento.</p>
+            <button class="btn-primary" onclick="window.location.href='login.html'">Iniciar Missão</button>
+        </section>
+
+        <h2 class="section-title">O Sistema do Jogo</h2>
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <h3>⏱️ Microlições</h3>
+                    <p>Aprenda de forma ágil. Nossas aulas são curtas e diretas, projetadas para você absorver o conteúdo entre uma "partida" e outra, sem cansaço mental.</p>
+                </div>
+                <div class="swiper-slide" style="border-top-color: var(--danger-red);">
+                    <h3>🌳 Ramificações</h3>
+                    <p>Álgebra, Geometria, Aritmética ou Lógica? Escolha sua classe matemática e siga uma árvore de habilidades que se adapta ao seu estilo de jogo.</p>
+                </div>
+                <div class="swiper-slide" style="border-top-color: var(--accent-yellow);">
+                    <h3>🏆 Ranking Global</h3>
+                    <p>Enfrente outros estudantes. Acumule pontos por precisão e velocidade para subir nas ligas, do "Novato do Cálculo" ao "Grão-Mestre dos Números".</p>
+                </div>
+                <div class="swiper-slide">
+                    <h3>🏅 Conquistas</h3>
+                    <p>Desbloqueie insígnias exclusivas ao completar desafios complexos. Mostre seu perfil platinado para o mundo.</p>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Framatch - Desenvolvido por estudantes da ETEC</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            loop: true,
+            coverflowEffect: { rotate: 15, stretch: 0, depth: 300, modifier: 1, slideShadows: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            autoplay: { delay: 4000, disableOnInteraction: false }
+        });
+    </script>
+</body>
+</html>

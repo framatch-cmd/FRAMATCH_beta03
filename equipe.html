@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framatch | A Guilda de Desenvolvedores</title>
+    <link rel="stylesheet" href="stylo.css">
+    <style>
+        .grid-equipe {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .dev-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+        .dev-card:hover { transform: translateY(-10px); border-color: var(--accent-yellow); }
+        .dev-foto {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-blue);
+            margin-bottom: 20px;
+        }
+        .dev-classe { color: var(--danger-red); font-weight: bold; font-size: 0.9rem; margin-bottom: 15px; text-transform: uppercase; }
+        .social-links a { color: var(--accent-yellow); text-decoration: none; font-weight: bold; margin: 0 10px; }
+        .social-links a:hover { color: white; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"> Framatch</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="objetivo.html">Objetivo</a>
+            <a href="equipe.html" class="active">Equipe</a>
+            <a href="login.html" class="btn-login">Entrar</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Mestres do Código</h1>
+        <p style="text-align: center; color: #cbd5e1; margin-bottom: 40px;">Conheça os aventureiros por trás da criação deste universo matemático.</p>
+
+        <div class="grid-equipe">
+            <div class="dev-card">
+                <img src="https://i1.sndcdn.com/artworks-WjeFxzi8JR5pVxvl-Fbqqrg-t500x500.jpg" alt="Foto Dev" class="dev-foto">
+                <h3>Tiago Rodrigo Marca Manrriquez</h3>
+                <p class="dev-classe">Ladino Full-Stack (HTML, CSS, JS, MongoDB)</p>
+                <p>Responsável por estruturar a lógica do sistema e dar vida às interfaces gamificadas do projeto.</p>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="#">GitHub</a> | <a href="#">LinkedIn</a>
+                </div>
+            </div>
+
+            <div class="dev-card">
+                <img src="data:image/jpeg;base64,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" alt="Foto Dev" class="dev-foto" style="border-color: var(--danger-red);">
+                <h3>Luis Fernando</h3>
+                <p class="dev-classe">Contemple o Mago do UI/UX Design</p>
+                <p>Focada em garantir que a experiência do usuário seja imersiva, acessível e visualmente épica.</p>
+                <div class="social-links" style="margin-top: 20px;">
+                    <a href="#">Behance</a> | <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Framatch - Desenvolvido por estudantes da ETEC</p>
+    </footer>
+</body>
+</html>

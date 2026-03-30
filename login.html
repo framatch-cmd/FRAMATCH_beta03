@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framatch | Portal de Acesso</title>
+    <link rel="stylesheet" href="stylo.css">
+    <style>
+        .auth-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh;
+        }
+        .auth-box {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .auth-header { display: flex; margin-bottom: 30px; border-bottom: 2px solid #333; }
+        .auth-tab {
+            flex: 1; text-align: center; padding: 15px; cursor: pointer;
+            color: #888; font-weight: bold; transition: 0.3s;
+        }
+        .auth-tab.active { color: var(--accent-yellow); border-bottom: 3px solid var(--accent-yellow); }
+        .auth-form { display: none; }
+        .auth-form.active { display: block; animation: fadeIn 0.5s; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .input-group { margin-bottom: 20px; }
+        .input-group label { display: block; margin-bottom: 8px; font-size: 0.9rem; color: #cbd5e1; }
+        .input-group input {
+            width: 100%; padding: 12px 15px; border-radius: 8px;
+            border: 1px solid #444; background: rgba(0,0,0,0.5);
+            color: white; outline: none; transition: 0.3s;
+        }
+        .input-group input:focus { border-color: var(--primary-blue); background: rgba(0,0,0,0.8); }
+        .btn-full { width: 100%; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">⚔️ Framatch</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="objetivo.html">Objetivo</a>
+            <a href="equipe.html">Equipe</a>
+        </nav>
+    </header>
+
+    <main class="container auth-wrapper">
+        <div class="auth-box">
+            <div class="auth-header">
+                <div class="auth-tab active" onclick="switchTab('login')">Entrar na Guilda</div>
+                <div class="auth-tab" onclick="switchTab('register')">Criar Personagem</div>
+            </div>
+
+            <form id="form-login" class="auth-form active">
+                <div class="input-group">
+                    <label>E-mail ou Nickname</label>
+                    <input type="text" placeholder="ex: matemagico@etec.sp.gov.br" required>
+                </div>
+                <div class="input-group">
+                    <label>Senha Secreta</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="button" class="btn-primary btn-full" onclick="alert('Conectando ao servidor...')">Iniciar Sessão</button>
+            </form>
+
+            <form id="form-register" class="auth-form">
+                <div class="input-group">
+                    <label>Nome(Usuário)</label>
+                    <input type="text" placeholder="Escolha seu nick" required>
+                </div>
+                <div class="input-group">
+                    <label>E-mail de Contato</label>
+                    <input type="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Sua Senha</label>
+                    <input type="password" placeholder="Mínimo 8 caracteres" required>
+                </div>
+                <button type="button" class="btn-primary btn-full" style="background: var(--primary-blue);" onclick="alert('Personagem criado com sucesso!')">Registrar</button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function switchTab(tab) {
+            document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.auth-form').forEach(f => f.classList.remove('active'));
+
+            if (tab === 'login') {
+                document.querySelectorAll('.auth-tab')[0].classList.add('active');
+                document.getElementById('form-login').classList.add('active');
+            } else {
+                document.querySelectorAll('.auth-tab')[1].classList.add('active');
+                document.getElementById('form-register').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

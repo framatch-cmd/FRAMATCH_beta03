@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root {
+    --bg-dark: #0f172a; /* Fundo escuro moderno */
+    --primary-blue: #3b82f6;
+    --accent-yellow: #eab308;
+    --danger-red: #ef4444;
+    --text-light: #f8fafc;
+    --card-bg: rgba(30, 41, 59, 0.7); /* Fundo translúcido para efeito "vidro" */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    background-image: radial-gradient(circle at top right, #1e3a8a 0%, transparent 40%),
+                      radial-gradient(circle at bottom left, #7f1d1d 0%, transparent 40%);
+    background-attachment: fixed;
+}
+
+/* Navegação */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--accent-yellow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-yellow);
+    text-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--danger-red);
+}
+
+.btn-login {
+    background: var(--primary-blue);
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn-login:hover {
+    background: transparent;
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+/* Estruturas Comuns */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--accent-yellow);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Botões Globais */
+.btn-primary {
+    background: var(--danger-red);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.6);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid #333;
+    margin-top: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; }
+    nav a { margin: 0 10px; font-size: 0.9rem; }
+}
